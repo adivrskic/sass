@@ -1,14 +1,26 @@
-// Variables
-$bg-color: plum;
-$item-color: skyblue;
-$hover-color: gray;
+//Importing, multiple imports
+@import "./resets", "./variables";
 
-// Maps
-$font-sizes: (
-  "small": 12px,
-  "med": 16px,
-  "large": 20px,
-);
+// Mixins
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    background-color: lighten($primary-color, 100%);
+    color: darken($text-color, 100%);
+  }
+}
+
+// Media Query Mixin
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
 
 body {
   background-color: $bg-color;
@@ -28,7 +40,7 @@ body {
 
 // Nesting
 .container {
-  display: flex;
+  @include flex(center, center);
   height: 100px;
   width: 50%;
 
@@ -41,4 +53,8 @@ body {
       background-color: $hover-color;
     }
   }
+}
+
+.light {
+  @include theme($light-theme: true);
 }
