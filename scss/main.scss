@@ -1,0 +1,44 @@
+// Variables
+$bg-color: plum;
+$item-color: skyblue;
+$hover-color: gray;
+
+// Maps
+$font-sizes: (
+  "small": 12px,
+  "med": 16px,
+  "large": 20px,
+);
+
+body {
+  background-color: $bg-color;
+}
+
+.small {
+  font-size: map-get($font-sizes, "small");
+}
+
+.medium {
+  font-size: map-get($font-sizes, "med");
+}
+
+.large {
+  font-size: map-get($font-sizes, "large");
+}
+
+// Nesting
+.container {
+  display: flex;
+  height: 100px;
+  width: 50%;
+
+  &__item {
+    height: 100%;
+    width: 100%;
+    background-color: $item-color;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}

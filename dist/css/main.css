@@ -1,0 +1,34 @@
+body {
+  background-color: plum;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.medium {
+  font-size: 16px;
+}
+
+.large {
+  font-size: 20px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  width: 50%;
+}
+
+.container__item {
+  height: 100%;
+  width: 100%;
+  background-color: skyblue;
+}
+
+.container__item:hover {
+  background-color: gray;
+}
+/*# sourceMappingURL=main.css.map */
